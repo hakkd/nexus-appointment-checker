@@ -12,7 +12,3 @@ class Notifier:
         for contact in contacts:
             print(contact)
             kit.sendwhatmsg_instantly(contact, message)
-
-
-if __name__ == "__main__":
-    Notifier.notify("test")
