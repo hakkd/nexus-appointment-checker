@@ -1,4 +1,6 @@
-locations = {
+from typing import Dict, Any
+
+locations: dict[int | Any, str | Any] = {
     5500: "Calais Enrollment Center",
     5101: "Houlton POE/Woodstock",
     5080: "Sault Ste Marie Enrollment Center",
