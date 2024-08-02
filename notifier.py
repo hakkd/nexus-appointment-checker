@@ -1,12 +1,18 @@
-from functools import partial
-from mac_notifications import client
+import pywhatkit as kit
+from dotenv import load_dotenv
+import os
 
 
 class Notifier:
-# TODO: make notifications send (desktop, email, whatsapp?)
+
     @staticmethod
     def notify(message):
-        client.create_notification(
-            title="NEXUS appointments available at the following locations:",
-            text=message
-        )
+        load_dotenv()
+        contacts = os.getenv("CONTACTS").split(", ")
+        for contact in contacts:
+            print(contact)
+            kit.sendwhatmsg_instantly(contact, message)
+
+
+if __name__ == "__main__":
+    Notifier.notify("test")

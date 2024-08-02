@@ -7,7 +7,7 @@ def main():
     ac = AppointmentChecker()
     results = ac.get_results()
     if len(results) > 0:
-        message = "\n".join(results)
+        message = "NEXUS interview appointments available at the following locations:\n" + "\n".join(results)
         print(message)
         Notifier.notify(message)
 
